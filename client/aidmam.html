@@ -1,0 +1,430 @@
+<head>
+  <title>All India Dalit Mahila Adhikar Manch (AIDMAM)</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="All India Dalit Mahila Adhikar Manch (AIDMAM)">
+  <meta name="author" content="Arun Zechariah">
+</head>
+
+<body>
+  <div id="wrap">
+    <div class="container" style="padding-top: 50px; padding-bottom: 20px;">
+      {{> navi}}
+      {{> main}}
+      {{> about}}
+      {{> whatwedo}}
+      {{> info}}
+      {{> press}}
+      {{> orgs_table}}
+      {{> gallery}}
+    </div>
+  </div>
+  <div id="footer">
+    <div class="container">
+      {{> footer}}
+    </div>
+  </div>
+</body>
+
+
+<template name="navi">
+  <div id="navi">
+    <div id="navbar" class="nav navbar navbar-fixed-top navbar-inverse" role="navigation">
+    {{!-- <div class="nav navbar navbar-fixed-top" id="navbar"> --}}
+    {{!-- <div class="navbar navbar-default" id="navbar"> --}}
+      <div class="container">
+        <div class="navbar-collapse collapse span6" >
+        <ul class="nav navbar-nav">
+              <li id="home_tab" class="{{{active}}}">
+                <a href="/">Home</a>
+              </li>
+              <li id="about_tab">
+                <a id="nav_show_about" href="/about">About</a>
+              </li>
+              <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">More&nbsp;<b class="caret"></b></a>
+                <ul class="dropdown-menu">
+                  <li>
+                    <a href="/whatwedo">What We Do</a>
+                  </li>
+                  <li>
+                    <a href="#">Events</a>
+                  </li>
+                  <li>
+                    <a href="/gallery">Gallery</a>
+                  </li>
+                  <li class="divider">
+                    
+                  </li>
+                  <li class="dropdown-header">
+                    Contact Us
+                  </li>
+                  <li>
+                    <a href="/info">Info</a>
+                  </li>
+                  <li>
+                    <a href="/press">Press</a>
+                  </li>
+                </ul>
+              </li>
+        </ul>
+          <!--/.navbar-collapse -->
+        </div>
+      <div class="navbar navbar-nav navbar-right">
+        <a class="navbar-brand brand" href="/">All India Dalit Mahila Adhikar Manch</a>
+      </div>
+      </div>
+      </div>
+    </div>
+</template>
+
+<template name="main">
+  {{#if showMain}}
+  <div class="start-template">
+    <div class="container">
+      {{> slider}}
+      {{> highlights}}
+      {{> social}}
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="jumbo">
+  <div class="jumbotron">
+    <div class="container">
+      <h1>
+        AIDMAM
+      </h1>
+      <p>
+        <a class="btn btn-lg btn-success" href="/about">Learn more »</a>
+      </p>
+      <i>a movement initiated and promoted by NCDHR at the national level to focus exclusively on Dalit Women in India.</i>
+
+    </div>
+  </div>
+</template>
+
+<template name="slider">
+  {{#if slider_items}}
+  <div id="slider" class="container">
+    <div id="this-carousel-id" class="carousel slide"><!-- class of slide for animation -->
+        <!-- class of active for the first item -->
+      <div class="carousel-inner">
+        {{#each slider_items}}
+        <div class="item {{{status_class}}}">
+          <a href="{{{link_url}}}"><img src="{{{img_url}}}" alt="{{{img_alt}}}" />
+          <span class="carousel-caption">
+            <h4>{{caption_title}}</h4>
+            <p>{{caption_text}}</p>
+          </span>
+          </a>
+        </div>
+        {{/each}}
+      </div><!-- /.carousel-inner -->
+      <!--  Next and Previous controls below
+            href values must reference the id for this carousel -->
+        <a class="carousel-control left" href="#this-carousel-id" data-slide="prev">
+        <p>&lsaquo;</p></a>
+        <a class="carousel-control right" href="#this-carousel-id" data-slide="next">&rsaquo;</a>
+    </div><!-- /.carousel -->
+  </div>
+  {{/if}}
+</template>
+
+<template name="highlights">
+  <div id="highlights" class="container text-center">
+    <div class="col-md-4 text-center">
+        <h2>
+          <i> We are ...</i>
+        </h2>
+        <p> a movement initiated and promoted by NCDHR at the national level to focus exclusively on Dalit Women in India.
+        </p>
+        <p>
+          <a class="btn btn-default" href="/about">View details »</a>
+        </p>
+    </div>
+    <div class="col-md-4">
+        <h2>
+          <i> What We do</i>
+        </h2>
+        <p>
+          AIDMAM works with Dalit Women across India. We address the critical gap in the Dalit Women's movement in India.
+        </p>
+        <p>
+          <a class="btn btn-default" href="/whatwedo">Read More »</a>
+        </p>
+        <br />
+        <hr>
+        <br />
+    </div>
+    <div class="col-md-4">
+      <h2>
+        <i> Events</i>
+      </h2>
+      <p>
+        Mashaal Rally<br />
+        Round Table<br />
+        Support Meeting<br />
+        Women's Safety Drive<br />
+      </p>
+      <p>
+        <a class="btn btn-default" href="#">View details »</a>
+      </p>
+    </div>
+      <br />
+      <hr />
+      <br />
+  </div>
+</template>
+
+<template name="social">
+  <div id="social" class="container well">
+    <div id="twitter_sect" class="col-md-4">
+          <h3 class="text-center">
+            Follow us
+          </h3>
+          <div class="text-center">
+            <a href="http://www.twitter.com/ashakowtal">
+              <img src="twitter.png" width="100">
+            </a>
+          </div>
+    </div>
+    <div id="fb_sect" class="col-md-4">
+          <h3 class="text-center">
+            Like Us
+          </h3>
+          <p class="text-center">
+            <a href="https://www.facebook.com/pages/National-Campaign-on-Dalit-Human-Rights-NCDHR">
+              <img src="fb.png" width="100">
+            </a>
+          </p>
+    </div>
+    <div id="contact_sect" class="col-md-4">
+          <h3 class="text-center">
+            Contact Us
+          </h3>
+          <p class="text-center">
+            <a href="mailto:info@ncdhr.org.in">info@ncdhr.org.in</a>
+          </p>
+          <p class="text-center">
+            +91 25842249
+          </p>
+    </div>
+  </div>
+</template>
+
+<template name="bgallery">
+  <!-- The Gallery as lightbox dialog, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery">
+    <div class="slides"></div>
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+</div>
+</template>
+
+<template name="gallery">
+  {{#if showGallery}}
+    {{> bgallery}}
+    <div class="starter-template">
+    <div class="container">
+      <div class="page-header">
+        <h2>Gallery</h2>
+      </div>
+      <div id="links">
+          <a href="karwan.jpg" title="karwan">
+            <img src="karwan.jpg" alt="karwan" width="150" height="150">
+          </a>
+          <a href="mashaal-poster.jpg" title="Mashaal Poster">
+            <img src="mashaal-poster.jpg" alt="Mashaal Poster" width="150" height="150">
+          </a>
+          <a href="sammelan.jpg" title="sammelan">
+            <img src="sammelan.jpg" alt="sammelan" width="150" height="150">
+          </a>
+          <a href="mashaal.jpg" title="mashaal">
+            <img src="mashaal.jpg" alt="mashaal" width="150" height="150">
+          </a>
+      </div>
+    </div>
+    </div>
+  {{/if}}
+</template>
+
+<template name="footer">
+  <div class="container">
+    <hr />
+    <div class="pull-right">
+    <p class="muted credit">
+     <small>&copy AIDMAM 2013 / <a href="mailto:arun@zechariah.net">ajz design</a></small>
+    </p>
+    </div>
+  </div>
+</template>
+
+
+<template name="about">
+  {{#if showAbout}}
+  <div class="starter-template">
+    <div class="container content-para">
+      <div class="page-header">
+    <h2>
+      About
+    </h2>
+      </div>    
+      <p class="lead">
+          AIDMAM is a forum of Dalit Women committed to challenging the nexus of patriarchy, caste, culture and class oppression, exploitation and marginalization of Dalit Women.
+      </p>
+      <p>
+        Its genesis is rooted in an attempt to address severe vulnerabilities faced by the <strong>80 million Dalit Women and girls in India alone</strong>, who are socially excluded and lie at the bottom of India's caste, class and gender hierarchies.
+      <p>
+        AIDMAM has membership and solidarity of non-Dalit women, Dalit men and other human rights defenders committed to the cause of protection and promotion of the rights of Dalit Women under the leadership of Dalit Women. This is a quest for accessing and ensuring Dalit Women’s right to life, security, development, dignity and equality in a violence-free society. 
+      </p>
+      <p>
+        Vulnerably placed at the bottom of India’s caste, class and gender hierarchies, Dalit Women experience endemic gender and caste discrimination and violence.  They bear the brunt of untouchability, caste oppression, poverty and political subordination along with Dalit men. They share gender based discrimination and exploitation from the patriarchal systems inside and outside the home. The interface of the severely imbalanced social, economic and political power equations in caste and patriarchy impacts Dalit Women uniquely, distinct from the experience of other women or Dalit men. The forces combine to expose them to increased physical and sexual violence and increased exploitation of their labour. They divorce them from access or control on assets and resources. It does not recognise their social and economic contribution. It limits their choices and opportunities, placing them on the bottom rung in all development indicators. The process inculcates disrespect and indignity of Dalit Women at the hands of all men and also of non-Dalit women.
+      </p>
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="whatwedo">
+  {{#if showWhatwedo}}
+  <div id="whatwedo" class="container content-para">
+    <div class="starter-template">
+      <div class="page-header">
+        <h2>
+          What We Do
+        </h2> 
+      </div> 
+      <div class="panel panel-default">
+        <div class="panel-heading">
+          Key Activities
+        </div>
+        <div class="panel-body">
+          <p>
+            Below are some of the initiatives and activities taken on by AIDMAM -
+          </p>
+        </div>
+        {{#if activities}}
+        <table class="table">
+          {{#each activities}}
+          <tr>
+            <td class="span4">
+              • {{title}}
+            </td>
+            <td class="span8">
+              {{desc}}
+            </td>
+          </tr>
+          {{/each}}
+        </table>
+        {{/if}}
+      </div>
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="press">
+  {{#if showPress}}
+  <div id="info" class="container content-para">
+    <div class="starter-template">
+      <div class="page-header">
+        <h2>Press</h2>
+      </div>
+      {{#if press_articles}}
+        {{#each press_articles}}
+          <div class="col-md-7">
+            <blockquote>
+            {{title}}
+            <small>
+              <a href="{{{url}}}">{{source}}</a>
+            </small>
+            </blockquote>
+          </div>
+          <div class="col-md-5">
+            {{#if img_url}}
+              <div class="well well-sm text-center">
+                <img src="{{{img_url}}" width="200">
+              </div>
+            {{/if}}
+          </div>
+        {{/each}}
+      {{/if}}
+    </div>
+  </div>
+  {{/if}}
+</template>
+
+<template name="info">
+  {{#if showInfo}}
+    <div id="info" class="container">
+      <div class="starter-template">
+        <div class="page-header">
+          <h2>Contact Info</h2>
+        </div>
+        <div class="row featurette">
+          <p class="lead">
+          </p>
+          <div class="col-md-7">
+            <address>
+              <strong>All India Dalit Mahila Adhikar Manch (AIDMAM)</strong>
+              <br />
+              <strong>National Campaign on Dalit Human Rights (NCDHR)</strong>
+              <br />
+              8/1 2nd Floor, South Patel Nagar
+              <br />
+              New Delhi -110008, India
+            </address>
+            <address>
+              <strong>Asha Kowtal</strong>
+              <a href="asha.kowtal@ncdhr.org.in">asha.kowtal@ncdhr.org.in</a>
+              <br />
+              <strong>Hannah</strong>
+              <a href="hannah@ncdhr.org.in">hannah@ncdhr.org.in</a>
+            </address>
+            <address>
+              <strong>Tele:</strong>
+              +91 25842249, +91 9560100442, +91 9810085498
+              <br />
+              <strong>Website:</strong><a href="http://www.ncdhr.org.in">www.ncdhr.org.in</a>
+            </address>
+          </div>
+          <div class="col-md-2">
+            <div class="well">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div> 
+  {{/if}}
+</template>
+
+<template name="orgs_table">
+  {{#if showTable}} 
+    <div class="container">
+      <div class="starter-template">
+        {{#if orgs}}
+          <div class="panel panel-default">
+            <div class="panel-heading">
+              <h2>Member Charities</h2>
+            </div>
+            <div class="panel-body">
+              <p> 
+                If you are a participant and not on the list - please let us know.
+              </p>
+            </div>
+            <ul class="list-group">
+            {{#each orgs}}
+            <li class="list-group-item">{{name}}</li>
+            {{/each}}
+            </ul>
+          </div>
+        {{/if}}
+      </div>
+    </div>
+  {{/if}}
+</template>
