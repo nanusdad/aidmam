@@ -1,1 +1,1 @@
-ECHO is on.
+Meteor app for AIDMAM
